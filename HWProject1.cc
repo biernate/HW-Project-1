@@ -7,11 +7,14 @@
  *  
  */
 #include <iostream>
+#include <iomanip>
 using namespace std;
 ///These two constants will be used alongside user input for miles driven to calculate all of the gas consumption
 const float townMilesPerGallon = 22.5;
 const float highwayMilesPerGallon = 29.5;
 int main() {
+///This is necessary to keep the output clean, rounds to one decimal place
+  cout << fixed << setprecision(1);
 ///These two floats will be assigned user input in order to be used for calculations alongside the global constants
   float milesDrivenTown;
   float milesDrivenHighway;
@@ -28,7 +31,7 @@ int main() {
   ///User input for miles driven on highway
   cin >> milesDrivenHighway;
   /// If the miles driven are negative, an error is given and the user is prompted to change their input
-  if (milesDrivenTown < 0) {
+  if (milesDrivenHighway < 0) {
     cout << "ERROR: Please enter a number greater than or equal to 0" << endl;
     return 0;
   }
@@ -53,7 +56,7 @@ int main() {
     cout << "The average miles per gallon cannot be calculated." << endl;
     return 0;
   } else {
-    cout << "The average miles per gallon for the trip" << avgMilesPerGallon << " miles/gallon" << endl;
+    cout << "The average miles per gallon for the trip: " << avgMilesPerGallon << " miles/gallon" << endl;
   }
   
 
